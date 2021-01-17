@@ -116,7 +116,7 @@ Create a cryptocurrency testnet with multiple nodes to transfer test funds betwe
 
 ![./screenshots/07.png](./screenshots/07.png)
 
-### Start mining!
+### Start mining
 
 - Using the current `git bash` instance, run `geth` to spin up the first node, replacing the `0x...` with **your** first node's *public address*
 
@@ -131,15 +131,45 @@ Create a cryptocurrency testnet with multiple nodes to transfer test funds betwe
   ```
 
   - There is a reference to the `enode`.
+
     - *Copy that line in **your** bash instance*
 
 ![./screenshots/08.png](./screenshots/08.png)
 
 - Open a **second instance** of `git bash` and run the following, replacing the `0x` with the *public address* of your second node
 
-  - 
+  - Be sure to replace the `enode://` with the `enode` string you copied from the previous step
 
   ``` bash
   ../geth --datadir node2 --unlock "0x95DC648D0e13BA2f522101AF66F3ff147Fb88425" --mine --port 30304 --bootnodes "enode://b50bb9d7bed0762adbb2388714c469481062ed2e5b385018c469cb84685b3371c08f5281520eb845294cdb0f3f930cfda78edc2a8fc8a2e9a9852d18d928363d@127.0.0.1:30303" --ipcdisable --allow-insecure-unlock
   ```
   
+- Voila! You've created your first blockchain!
+
+### Transfer testnet coin
+
+- Open `MyCrypto` and click on `Change Network`
+
+![./screenshots/09.png](./screenshots/09.png)
+
+- Select `Add Custom Node`
+
+![./screenshots/10.png](./screenshots/10.png)
+
+- Use the default settings to connect with your new test network
+
+  ![./screenshots/11.png](./screenshots/11.png)
+
+  - Back at the mainscreen, select `Keystore File`
+
+    ![./screenshots/12.png](./screenshots/12.png)
+
+  - Open the keystore file in either `node1` or `node2` by navigating to the respective folder in your `testnet` directory
+
+  - Once your wallet opens, you can send to any other address on your blockchain!
+
+    - *Which in this case is the public address you created for `node2`*
+
+    ![./screenshots/13.png](./screenshots/13.png)
+
+- Congratulations, you have now created your very first blockchain and transferred your very first cryptocurrency!
